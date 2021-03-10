@@ -10,7 +10,7 @@ client.on('ready', () => {
 
     privateMessage(client, 'ping', 'Pong!')
 
-    client.user.fetch('368040553390145536').then((user) => {
+    client.user.cache.get('368040553390145536').then((user) => {
         user.send('Hello World')
     })
 

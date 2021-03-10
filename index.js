@@ -3,16 +3,9 @@ const client = new Discord.Client()
 
 const config = require('./config.json')
 const command = require('./command')
-const privateMessage =  require('./private-message')
 
 client.on('ready', () => {
     console.log('The client is ready!')
-
-    privateMessage(client, 'ping', 'Pong!')
-
-    client.user.cache.get('368040553390145536').then((user) => {
-        user.send('Hello World')
-    })
 
     command(client, ['ping', 'test'], message => {
         message.channel.send('Pong!')

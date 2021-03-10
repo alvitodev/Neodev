@@ -18,7 +18,7 @@ client.on('ready', () => {
     })
 
     command(client, ['cc', 'clearchannel'], message => {
-        if (messsage.member.hasPermission('ADMINISTRATOR')) {
+        if (message.member.hasPermission('ADMINISTRATOR')) {
             message.channel.message.fetch().then(results => {
                 message.channel.bulkDelete(results) 
             })

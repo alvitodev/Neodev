@@ -10,6 +10,10 @@ client.on('ready', () => {
 
     privateMessage(client, 'ping', 'Pong!')
 
+    client.user.fetch('368040553390145536').then((user) => {
+        user.send('Hello World')
+    })
+
     command(client, ['ping', 'test'], message => {
         message.channel.send('Pong!')
     })

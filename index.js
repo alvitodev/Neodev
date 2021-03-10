@@ -24,6 +24,17 @@ client.on('ready', () => {
             })
         }
     })
+
+    command(client, 'status', (message) => {
+        const content = message.content.replace('neostatus', '')
+
+        client.user.setPresence({
+            activity: {
+                name: content,
+                type: 0,
+            },
+        })
+    })
 })
 
 client.login(process.env.DJS_TOKEN)

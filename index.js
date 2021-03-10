@@ -13,7 +13,7 @@ client.on('ready', () => {
 
     command(client, 'servers', message => {
         client.guilds.cache.forEach(guild => {
-            console.log(guild)
+            message.channel.send(`${guild.name} punya member sebanyak ${guild.memberCount}`)
         })
     })
 })
